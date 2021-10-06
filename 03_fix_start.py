@@ -14,16 +14,10 @@ onde todas as instancias de stra foram substituidas por strb.
 """
 
 def fix_start(s):
-    # +++ SUA SOLUÇÃO +++
-    s1 = ''
-    s2 = ''
-    for l in s:
-        if l == s1:
-            s2 = s2 + '*'
-        else:
-            s2 = s2 + l
-        s1 = s[0]
-    return s2
+    '''Criar uma nova string substituindo a repetição da primeira letra por *,
+        a primeira letra não deve ser alterada.'''
+
+    return ''.join([s[0], s[1:].replace(s[0], '*')])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
