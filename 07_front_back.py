@@ -13,8 +13,13 @@ a-frente + b-frente + a-trás + b-trás
 import math
 
 
+def slc_ab(slc, pos='inicio'):
+    """Retorna o slice de a ou b, evitando repetição na função front_back"""
+    return slc[:math.ceil(len(slc) / 2)] if pos == 'inicio' else slc[math.ceil(len(slc) / 2):]
+
+
 def front_back(a, b):
-    return ''.join([a[:math.ceil(len(a) / 2)], b[:math.ceil(len(b) / 2)], a[math.ceil(len(a) / 2):], b[math.ceil(len(b) / 2):]])
+    return ''.join([slc_ab(a), slc_ab(b), slc_ab(a, 'fim'), slc_ab(b, 'fim')])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
